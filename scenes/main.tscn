@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://2bjkp16dbn6y"]
+[gd_scene load_steps=15 format=4 uid="uid://2bjkp16dbn6y"]
 
 [ext_resource type="PackedScene" uid="uid://c1pg13osi6wnw" path="res://scenes/player.tscn" id="1_r04xj"]
 [ext_resource type="Texture2D" uid="uid://bnsncgnun2ich" path="res://sprites/world_tileset.png" id="2_jn2c7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c0gr57lk78ik3" path="res://scripts/skills/jump.gd" id="7_r8jqk"]
 [ext_resource type="Script" uid="uid://b2xr4d2vxjuqg" path="res://scripts/skills/magnet.gd" id="8_6nwks"]
 [ext_resource type="Script" uid="uid://be4ghmhqarfay" path="res://scripts/metal_block.gd" id="9_u6g88"]
+[ext_resource type="Texture2D" uid="uid://y5fxh2yrpqu4" path="res://sprites/Character.png" id="10_choun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf8up"]
 texture = ExtResource("2_jn2c7")
@@ -232,5 +233,10 @@ shape = SubResource("RectangleShape2D_oa2ob")
 texture = ExtResource("2_jn2c7")
 region_enabled = true
 region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(-190, 12)
+scale = Vector2(0.335938, 0.335938)
+texture = ExtResource("10_choun")
 
 [connection signal="body_entered" from="DeathLimit" to="DeathLimit" method="_on_body_entered"]
