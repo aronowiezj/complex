@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8grdg3fkkylf"]
+
+[ext_resource type="Texture2D" uid="uid://bh3ty6tsi2nms" path="res://icon.svg" id="2_ywm8r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b80kt"]
+size = Vector2(64, 64)
+
+[node name="FloatingSkill" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_b80kt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.34902)
+position = Vector2(0, -13)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ywm8r")
+
+[node name="InteractionLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 3.0
+offset_top = -47.0
+offset_right = 43.0
+offset_bottom = -7.0
+text = "E"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

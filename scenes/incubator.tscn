@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxmhfqupny34n"]
+
+[ext_resource type="Script" uid="uid://c80bxt8bquwr4" path="res://scripts/interactables/incubator.gd" id="1_6d8u5"]
+[ext_resource type="Texture2D" uid="uid://bh3ty6tsi2nms" path="res://icon.svg" id="2_ttynk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b80kt"]
+size = Vector2(64, 64)
+
+[node name="IncubatorTank" type="Area2D"]
+script = ExtResource("1_6d8u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_b80kt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ttynk")
+
+[node name="InteractionLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 17.0
+offset_top = -64.66
+offset_right = 57.0
+offset_bottom = -24.66
+text = "E"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
