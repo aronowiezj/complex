@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpwyq1e2dt6rm"]
+
+[ext_resource type="Script" uid="uid://cp7j0s1tgxwv8" path="res://Scripts/GameWindows/game_scene.gd" id="1_epfof"]
+
+[node name="GameScene" type="Node"]
+script = ExtResource("1_epfof")
+
+[node name="Scenes" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -2,9 +2,11 @@ extends Entity
 class_name Player
 
 var will_reset: bool
+var camera: Camera2D
 
 func _ready() -> void:
 	GAME.player = self
+	camera = find_child("Camera2D")
 
 func _physics_process(_delta: float) -> void:
 	if will_reset:

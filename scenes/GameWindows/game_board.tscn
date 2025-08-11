@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=4 uid="uid://2bjkp16dbn6y"]
 
-[ext_resource type="PackedScene" uid="uid://c1pg13osi6wnw" path="res://scenes/player.tscn" id="1_r04xj"]
-[ext_resource type="Texture2D" uid="uid://bnsncgnun2ich" path="res://sprites/world_tileset.png" id="2_jn2c7"]
-[ext_resource type="PackedScene" uid="uid://dxmhfqupny34n" path="res://scenes/incubator.tscn" id="3_e44hj"]
-[ext_resource type="Script" uid="uid://dfyk2jprsmc7j" path="res://scripts/death_area.gd" id="4_hff7w"]
-[ext_resource type="PackedScene" uid="uid://b8grdg3fkkylf" path="res://scenes/floating_skill.tscn" id="5_3o04o"]
-[ext_resource type="Script" uid="uid://dyxvyel3jgvrt" path="res://scripts/skills/crouch.gd" id="6_0m2tl"]
-[ext_resource type="Script" uid="uid://c0gr57lk78ik3" path="res://scripts/skills/jump.gd" id="7_r8jqk"]
-[ext_resource type="Script" uid="uid://b2xr4d2vxjuqg" path="res://scripts/skills/magnet.gd" id="8_6nwks"]
-[ext_resource type="Script" uid="uid://be4ghmhqarfay" path="res://scripts/metal_block.gd" id="9_u6g88"]
-[ext_resource type="Texture2D" uid="uid://y5fxh2yrpqu4" path="res://sprites/Character.png" id="10_choun"]
+[ext_resource type="Script" uid="uid://bxqka2s4std6v" path="res://Scripts/GameWindows/game_board.gd" id="1_2liou"]
+[ext_resource type="PackedScene" uid="uid://c1pg13osi6wnw" path="res://Scenes/player.tscn" id="1_r04xj"]
+[ext_resource type="Texture2D" uid="uid://bnsncgnun2ich" path="res://Sprites/world_tileset.png" id="2_jn2c7"]
+[ext_resource type="PackedScene" uid="uid://dxmhfqupny34n" path="res://Scenes/incubator.tscn" id="3_e44hj"]
+[ext_resource type="Script" uid="uid://dfyk2jprsmc7j" path="res://Scripts/death_area.gd" id="4_hff7w"]
+[ext_resource type="PackedScene" uid="uid://b8grdg3fkkylf" path="res://Scenes/floating_skill.tscn" id="5_3o04o"]
+[ext_resource type="Script" uid="uid://dyxvyel3jgvrt" path="res://Scripts/Skills/crouch.gd" id="6_0m2tl"]
+[ext_resource type="Script" uid="uid://c0gr57lk78ik3" path="res://Scripts/Skills/jump.gd" id="7_r8jqk"]
+[ext_resource type="Script" uid="uid://b2xr4d2vxjuqg" path="res://Scripts/Skills/magnet.gd" id="8_6nwks"]
+[ext_resource type="Script" uid="uid://be4ghmhqarfay" path="res://Scripts/metal_block.gd" id="9_u6g88"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf8up"]
 texture = ExtResource("2_jn2c7")
@@ -177,19 +177,18 @@ sources/0 = SubResource("TileSetAtlasSource_nf8up")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oa2ob"]
 size = Vector2(16, 16)
 
-[node name="GameScene" type="Node2D"]
+[node name="GameBoard" type="Node2D"]
+script = ExtResource("1_2liou")
 
 [node name="Player" parent="." instance=ExtResource("1_r04xj")]
 z_index = 1
-position = Vector2(-143, -88)
-speed = null
-jump_velocity = null
+position = Vector2(-156, -89)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="Incubators" type="Node" parent="."]
+[node name="Incubators" type="Node2D" parent="."]
 
 [node name="IncubatorTank" parent="Incubators" instance=ExtResource("3_e44hj")]
 position = Vector2(-71, -88)
@@ -233,10 +232,5 @@ shape = SubResource("RectangleShape2D_oa2ob")
 texture = ExtResource("2_jn2c7")
 region_enabled = true
 region_rect = Rect2(32, 16, 16, 16)
-
-[node name="Character" type="Sprite2D" parent="."]
-position = Vector2(-190, 12)
-scale = Vector2(0.335938, 0.335938)
-texture = ExtResource("10_choun")
 
 [connection signal="body_entered" from="DeathLimit" to="DeathLimit" method="_on_body_entered"]

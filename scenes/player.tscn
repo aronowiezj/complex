@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1pg13osi6wnw"]
 
-[ext_resource type="Script" uid="uid://ciwpx5lmjokmh" path="res://scripts/player.gd" id="1_1kjmu"]
-[ext_resource type="Texture2D" uid="uid://bh3ty6tsi2nms" path="res://icon.svg" id="1_ypq3i"]
+[ext_resource type="Script" uid="uid://ciwpx5lmjokmh" path="res://Scripts/player.gd" id="1_1kjmu"]
+[ext_resource type="Texture2D" uid="uid://y5fxh2yrpqu4" path="res://Sprites/character.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsxbp"]
-size = Vector2(16, 64)
+size = Vector2(16, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xbtn"]
 size = Vector2(16, 32)
@@ -13,7 +13,7 @@ size = Vector2(16, 32)
 script = ExtResource("1_1kjmu")
 
 [node name="DefaultCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -28)
 shape = SubResource("RectangleShape2D_nsxbp")
 
 [node name="CrouchCollision" type="CollisionShape2D" parent="."]
@@ -23,11 +23,11 @@ disabled = true
 
 [node name="DefaultSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -32)
-scale = Vector2(0.125, 0.5)
-texture = ExtResource("1_ypq3i")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_g2els")
 
 [node name="CrouchSprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -16)
-scale = Vector2(0.125, 0.25)
-texture = ExtResource("1_ypq3i")
+position = Vector2(0, -17.96)
+scale = Vector2(0.25, 0.140937)
+texture = ExtResource("2_g2els")
