@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8grdg3fkkylf"]
+[gd_scene load_steps=4 format=3 uid="uid://b8grdg3fkkylf"]
 
+[ext_resource type="Script" uid="uid://cdo61w7x8c4q1" path="res://Scripts/Interactables/floating_skill.gd" id="1_0u4rl"]
 [ext_resource type="Texture2D" uid="uid://bh3ty6tsi2nms" path="res://icon.svg" id="2_ywm8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b80kt"]
 size = Vector2(64, 64)
 
 [node name="FloatingSkill" type="Area2D"]
+script = ExtResource("1_0u4rl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)

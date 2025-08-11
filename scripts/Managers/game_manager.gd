@@ -23,6 +23,3 @@ func wait_to(_seconds: float, _callable: Callable) -> void:
 	game_scene.timer.wait_time = _seconds
 	game_scene.timer.start()
 	game_scene.timer.timeout.connect(_callable, ConnectFlags.CONNECT_ONE_SHOT)
-
-func new_skill(skill: Skill) -> void:
-	player.skills.append(skill)

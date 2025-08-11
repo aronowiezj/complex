@@ -17,14 +17,18 @@ func _physics_process(_delta: float) -> void:
 	_apply_gravity(_delta)
 		
 	# Handle Skills
-	for skill in skills:
-		skill.process_skill(self, _delta)
+	for skill in skills.keys():
+		if skills[skill]:
+			SKILLS.process_skill(skill, self, _delta)
 
 	# Get the input direction and handle the movement/deceleration.
 	_handle_inputs()
 	move_and_slide()
 	
 func _handle_inputs() -> void:
+	if Input.is_action_just_pressed("open_ui"):
+		EVENTS.on_skill_sheet_called.emit()
+		
 	var direction = Input.get_axis("move_left", "move_right")
 	if is_gravity_shifted_right:
 		if direction:

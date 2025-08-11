@@ -1,5 +1,4 @@
-extends Skill
-
+	
 var is_shift: bool = false
 
 func process_skill(_entity: Entity, _delta: float) -> void:

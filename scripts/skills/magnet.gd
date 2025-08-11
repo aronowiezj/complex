@@ -1,4 +1,3 @@
-extends Skill
 
 var is_targeting: bool = false
 

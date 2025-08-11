@@ -1,4 +1,3 @@
-extends Skill
 
 func process_skill(_entity: Entity, _delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):

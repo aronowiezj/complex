@@ -1,5 +1,3 @@
-extends Skill
-
 var is_crouching: bool = false
 
 func process_skill(_entity: Entity, _delta: float) -> void:

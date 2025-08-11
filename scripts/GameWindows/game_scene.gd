@@ -3,6 +3,7 @@ class_name GameScene
 
 @onready var scenes_node = $Scenes
 @onready var timer = $Timer
+@onready var character_sheet = $CanvasLayer/CharacterSheet
 
 var game_board: GameWindow
 var game_over: GameWindow
@@ -12,6 +13,7 @@ var scenes: Array
 func _ready():
 	EVENTS.on_player_lost.connect(on_player_lost_event)
 	EVENTS.on_player_restart.connect(on_player_restart_event)
+	EVENTS.on_skill_sheet_called.connect(on_skill_sheet_called_event)
 	
 	GAME.game_scene = self
 	
@@ -44,3 +46,9 @@ func on_player_lost_event() -> void:
 func on_player_restart_event() -> void:
 	#_open_alone(box_selection)
 	GAME.reset()
+
+func on_skill_sheet_called_event() -> void:
+	if character_sheet.visible:
+		character_sheet.hide_skill()
+	else:
+		character_sheet.show_skill()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpwyq1e2dt6rm"]
+[gd_scene load_steps=3 format=3 uid="uid://bpwyq1e2dt6rm"]
 
 [ext_resource type="Script" uid="uid://cp7j0s1tgxwv8" path="res://Scripts/GameWindows/game_scene.gd" id="1_epfof"]
+[ext_resource type="PackedScene" uid="uid://dd8jvhb54cmrg" path="res://Scenes/GameMenus/character_sheet.tscn" id="2_y8777"]
 
 [node name="GameScene" type="Node"]
 script = ExtResource("1_epfof")
@@ -11,3 +12,6 @@ script = ExtResource("1_epfof")
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CharacterSheet" parent="CanvasLayer" instance=ExtResource("2_y8777")]
+visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://2bjkp16dbn6y"]
+[gd_scene load_steps=12 format=4 uid="uid://2bjkp16dbn6y"]
 
 [ext_resource type="Script" uid="uid://bxqka2s4std6v" path="res://Scripts/GameWindows/game_board.gd" id="1_2liou"]
 [ext_resource type="PackedScene" uid="uid://c1pg13osi6wnw" path="res://Scenes/player.tscn" id="1_r04xj"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dxmhfqupny34n" path="res://Scenes/incubator.tscn" id="3_e44hj"]
 [ext_resource type="Script" uid="uid://dfyk2jprsmc7j" path="res://Scripts/death_area.gd" id="4_hff7w"]
 [ext_resource type="PackedScene" uid="uid://b8grdg3fkkylf" path="res://Scenes/floating_skill.tscn" id="5_3o04o"]
-[ext_resource type="Script" uid="uid://dyxvyel3jgvrt" path="res://Scripts/Skills/crouch.gd" id="6_0m2tl"]
-[ext_resource type="Script" uid="uid://c0gr57lk78ik3" path="res://Scripts/Skills/jump.gd" id="7_r8jqk"]
-[ext_resource type="Script" uid="uid://b2xr4d2vxjuqg" path="res://Scripts/Skills/magnet.gd" id="8_6nwks"]
 [ext_resource type="Script" uid="uid://be4ghmhqarfay" path="res://Scripts/metal_block.gd" id="9_u6g88"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf8up"]
@@ -208,17 +205,16 @@ script = ExtResource("4_hff7w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathLimit"]
 shape = SubResource("WorldBoundaryShape2D_n6fo8")
 
-[node name="FloatingSkill" parent="." instance=ExtResource("5_3o04o")]
-position = Vector2(-240, 50)
-script = ExtResource("6_0m2tl")
+[node name="FloatingSkill1" parent="." instance=ExtResource("5_3o04o")]
+position = Vector2(-124, -97)
+skill = 2
 
 [node name="FloatingSkill2" parent="." instance=ExtResource("5_3o04o")]
-position = Vector2(23, 81)
-script = ExtResource("7_r8jqk")
+position = Vector2(16, 79)
 
 [node name="FloatingSkill3" parent="." instance=ExtResource("5_3o04o")]
-position = Vector2(-124, -97)
-script = ExtResource("8_6nwks")
+position = Vector2(-254, 46)
+skill = 1
 
 [node name="MetalBlock" type="StaticBody2D" parent="."]
 position = Vector2(76, -108)

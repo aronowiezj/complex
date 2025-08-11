@@ -13,7 +13,10 @@ var is_gravity_reversed = false
 var is_gravity_shifted_right = false
 var saved_incubator_index: int = -1
 
-var skills: Array[Skill]
+var skills: Dictionary
+
+func update_skill(skill: SKILLS.Skill, active: bool) -> void:
+	skills[skill] = active
 
 func switch_to_default_state() -> void:
 	crouch_collision_box.disabled = true

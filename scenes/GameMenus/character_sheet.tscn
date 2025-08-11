@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd8jvhb54cmrg"]
 
-[ext_resource type="Script" path="res://scenes/GameWindows/character_sheet.gd" id="1_ei1qf"]
+[ext_resource type="Script" uid="uid://kgsk6cf67cfl" path="res://Scripts/GameMenus/character_sheet.gd" id="1_ei1qf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei1qf"]
 
